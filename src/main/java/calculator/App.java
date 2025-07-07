@@ -16,6 +16,10 @@ public class App {
         System.out.print("두 번째 숫자를 입력하세요: ");
         int b = sc.nextInt();
 
+        System.out.print("사칙연산 기호를 입력하세요: ");
+        /* CharAt(idx) : charAt 메서드는 매개변수로 char 타입으로 반환하고자 하는 문자열의 위치(index) */
+        char operator = sc.next().charAt(0);
+
         sc.close();
     }
 }
