@@ -1,6 +1,8 @@
 package calculator;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 
@@ -12,8 +14,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] memoResult = new int[10];
-        int memoResultIdx = 0;
+        Queue<Integer> memoResult = new LinkedList<>();
 
         while(true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -48,17 +49,15 @@ public class App {
             }
 
             if(valid) {
-                if(memoResultIdx < 10) {
-                    memoResult[memoResultIdx++] = result;
-                }
-                if(memoResultIdx == 10) {
-                    for(int i = 0; i < memoResult.length-1; i++) {
-                        memoResult[i] = memoResult[i+1];
-                    }
-                    memoResult[memoResultIdx-1] = result;
-                }
+                memoResult.add(result);
             }
             System.out.println("결과: " + result);
+
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String isRemove = sc.next();
+            if(isRemove.equals("remove")) {
+                memoResult.remove();
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
@@ -66,7 +65,7 @@ public class App {
                 break;
             }
         }
-        System.out.println(Arrays.toString(memoResult));
+        System.out.println(memoResult);
 
         sc.close();
     }
