@@ -51,6 +51,12 @@ public class App {
                 if(memoResultIdx < 10) {
                     memoResult[memoResultIdx++] = result;
                 }
+                if(memoResultIdx == 10) {
+                    for(int i = 0; i < memoResult.length-1; i++) {
+                        memoResult[i] = memoResult[i+1];
+                    }
+                    memoResult[memoResultIdx-1] = result;
+                }
             }
             System.out.println("결과: " + result);
 
