@@ -59,13 +59,18 @@ public class App {
                 memoResult.remove();
             }
 
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String isInquiry = sc.next();
+            if(isInquiry.equals("inquiry")) {
+                memoResult.forEach(data -> System.out.println(data));
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
             if(exit.equals("exit")) {
                 break;
             }
         }
-        System.out.println(memoResult);
 
         sc.close();
     }
