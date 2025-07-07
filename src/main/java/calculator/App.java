@@ -48,7 +48,7 @@ public class App {
             }
 
             if(valid) {
-                if(memoResult[memoResultIdx] < 10) {
+                if(memoResultIdx < 10) {
                     memoResult[memoResultIdx++] = result;
                 }
             }
