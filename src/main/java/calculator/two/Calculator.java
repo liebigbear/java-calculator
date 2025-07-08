@@ -5,7 +5,12 @@ import java.util.Queue;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    private Queue<String> memoResult = new LinkedList<>();
+    private Queue<String> memoResult;
+
+    public Calculator() {
+        this.memoResult = new LinkedList<>();
+    }
+
 
     public Queue<String> getMemoResult() {
         return memoResult;
