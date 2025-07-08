@@ -8,7 +8,7 @@ public class Calculator {
     private Queue<Integer> memoResult = new LinkedList<>();
 
 
-    public int calculate(int a, int b, char operator) {
+    public Queue<Integer> calculate(int a, int b, char operator) {
         int result = 0;
         if(operator == '+') {
             result = a + b;
@@ -27,6 +27,7 @@ public class Calculator {
         } else {
             throw new IllegalArgumentException("잘못된 연산자를 입력하셨습니다.");
         }
-        return result;
+        memoResult.add(result);
+        return memoResult;
     }
 }
