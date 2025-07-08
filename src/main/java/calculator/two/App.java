@@ -24,8 +24,12 @@ public class App {
             /* CharAt(idx) : charAt 메서드는 매개변수로 char 타입으로 반환하고자 하는 문자열의 위치(index) */
             char operator = sc.next().charAt(0);
 
-            System.out.println(calculator.calculate(a, b, operator));
+            calculator.calculate(a, b, operator);
 
+            System.out.println("calculator.getMemoResult() = " + calculator.getMemoResult());
+
+            //값 초기화
+            calculator.setMemoResult(new LinkedList<>());
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();

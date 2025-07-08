@@ -7,8 +7,15 @@ public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     private Queue<String> memoResult = new LinkedList<>();
 
+    public Queue<String> getMemoResult() {
+        return memoResult;
+    }
 
-    public Queue<String> calculate(int a, int b, char operator) {
+    public void setMemoResult(Queue<String> memoResult) {
+        this.memoResult = memoResult;
+    }
+
+    public void calculate(int a, int b, char operator) {
         try {
             int result = 0;
             if(operator == '+') {
@@ -32,6 +39,6 @@ public class Calculator {
         } catch (Exception e) {
             memoResult.add(e.getMessage());
         }
-        return memoResult;
     }
+
 }
