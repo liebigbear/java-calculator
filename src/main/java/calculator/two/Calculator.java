@@ -19,6 +19,10 @@ public class Calculator {
         memoResult.remove();
     }
 
+    public void inquiryResults() {
+        memoResult.forEach(System.out::println);
+    }
+
     public void calculate(int a, int b, char operator) {
         try {
             int result = 0;
