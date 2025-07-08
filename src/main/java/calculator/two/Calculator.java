@@ -15,6 +15,10 @@ public class Calculator {
         this.memoResult = memoResult;
     }
 
+    public void removeResult() {
+        memoResult.remove();
+    }
+
     public void calculate(int a, int b, char operator) {
         try {
             int result = 0;
