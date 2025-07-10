@@ -10,30 +10,42 @@ public abstract class Calculator {
     protected SubtractOperator subtractOperator;
     protected MultiplyOperator multiplyOperator;
     protected DivideOperator divideOperator;
+    protected ModOperator modOperator;
 
-    public class AddOperator {
+    public class AddOperator implements Operation {
+        @Override
         public int operate(int a, int b) {
             return a + b;
         }
     }
 
-    public class SubtractOperator {
+    public class SubtractOperator implements Operation {
+        @Override
         public int operate(int a, int b) {
             return a - b;
         }
     }
 
-    public class MultiplyOperator {
+    public class MultiplyOperator implements Operation {
+        @Override
         public int operate(int a, int b) {
             return a * b;
         }
     }
 
 
-    public class DivideOperator {
+    public class DivideOperator implements Operation {
+        @Override
         public int operate(int a, int b) {
             if (b == 0) throw new ArithmeticException("0으로 나눌 수 없습니다.");
             return a / b;
+        }
+    }
+
+    public class ModOperator implements Operation {
+        @Override
+        public int operate(int a, int b) {
+            return a % b;
         }
     }
 
@@ -55,6 +67,7 @@ public abstract class Calculator {
         this.subtractOperator = new SubtractOperator();
         this.multiplyOperator = new MultiplyOperator();
         this.divideOperator = new DivideOperator();
+        this.modOperator = new ModOperator();
     }
 
     public Queue<String> getMemoResult() {

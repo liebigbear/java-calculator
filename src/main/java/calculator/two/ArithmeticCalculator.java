@@ -21,7 +21,7 @@ public class ArithmeticCalculator extends Calculator {
             } else if(operator == '/') {
                 result = divideOperator.operate(a, b);
             } else if(operator == '%') {
-                result = a % b;
+                result = modOperator.operate(a, b);
             } else {
                 throw new IllegalArgumentException("잘못된 연산자를 입력하셨습니다.");
             }
