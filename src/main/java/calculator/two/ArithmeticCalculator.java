@@ -2,6 +2,7 @@ package calculator.two;
 
 public class ArithmeticCalculator extends Calculator {
 
+
     @Override
     public void calculate(String input) {
         String[] inputValues = input.split(" ");
@@ -12,17 +13,13 @@ public class ArithmeticCalculator extends Calculator {
         try {
             int result = 0;
             if(operator == '+') {
-                result = a + b;
+                result = addOperator.operate(a, b);
             } else if(operator == '-') {
-                result = a - b;
+                result = subtractOperator.operate(a, b);
             } else if(operator == '*') {
-                result = a * b;
+                result = multiplyOperator.operate(a, b);
             } else if(operator == '/') {
-                if(b == 0)  {
-                    //매개변수로 해당 오류 내용 전달
-                    throw new ArithmeticException("0으로 나눌 수 없습니다.");
-                }
-                else result = a / b;
+                result = divideOperator.operate(a, b);
             } else if(operator == '%') {
                 result = a % b;
             } else {
