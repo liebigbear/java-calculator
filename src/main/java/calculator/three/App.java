@@ -47,6 +47,16 @@ public class App {
                 if(isInquiry.equals("inquiry")) {
                     arithmeticCalculator.inquiryResults();
                 }
+
+                //다운캐스팅
+                if (arithmeticCalculator instanceof ArithmeticCalculator) {
+                    ArithmeticCalculator arithmeticCalculator1 = (ArithmeticCalculator) arithmeticCalculator;
+                    //입력값 보다 큰 값 출력
+                    System.out.println("저장된 연산결과 중 입력된 값보다 큰 값만 출력합니다");
+                    System.out.println("arithmeticCalculator1.getResultGreaterInput() = " + arithmeticCalculator1.getResultGreaterInput());
+                }
+
+
             }
             if(command.equals("areaCircle")) {
                 System.out.println("반지름을 입력하세요");
