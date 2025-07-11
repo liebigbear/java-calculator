@@ -1,6 +1,6 @@
 package calculator.three;
 
-public class CircleCalculator extends Calculator {
+public class CircleCalculator extends Calculator<String> {
     /*
     static : 메모리 할당을 컴파일 시간에 한다. 메소드 영역에 저장되며 이는 프로그램 실행 직후부터 프로그램 종료까지 메모리에 남아있다.
     메모리를 절약할 수 있어 내부 클래스를 만들 때도 사용

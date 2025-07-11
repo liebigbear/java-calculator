@@ -1,19 +1,19 @@
 package calculator.three;
 
-public class ArithmeticCalculator extends Calculator {
+public class ArithmeticCalculator extends Calculator<String> {
 
 
     @Override
     public void calculate(String input) {
         String[] inputValues = input.split(" ");
-        int a = Integer.parseInt(inputValues[0]);
-        int b = Integer.parseInt(inputValues[1]);
+        double a = Double.parseDouble(inputValues[0]);
+        double b = Double.parseDouble(inputValues[1]);
         char operator = inputValues[2].charAt(0);
 
         try {
             OperatorType getOpration = OperatorType.getOperatorType(operator);
-            int result = getOpration.operator(a, b);
-            addResult(String.valueOf(result));
+            double result = getOpration.operator(a, b);
+            addResult(String.format("%.2f", result));
         } catch (Exception e) {
             addResult(e.getMessage());
         }

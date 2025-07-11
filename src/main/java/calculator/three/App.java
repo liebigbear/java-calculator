@@ -9,8 +9,8 @@ public class App {
      * @param args
      */
     public static void main(String[] args) {
-        Calculator arithmeticCalculator = new ArithmeticCalculator();
-        Calculator circleCalculator = new CircleCalculator();
+        Calculator<String> arithmeticCalculator = new ArithmeticCalculator();
+        Calculator<String> circleCalculator = new CircleCalculator();
 
         Scanner sc = new Scanner(System.in);
         while(true) {
@@ -18,9 +18,9 @@ public class App {
             String command = sc.nextLine();
             if(command.equals("plus")) {
                 System.out.print("첫 번째 숫자를 입력하세요: ");
-                int a = sc.nextInt();
+                String a = sc.nextLine();
                 System.out.print("두 번째 숫자를 입력하세요: ");
-                int b = sc.nextInt();
+                String b = sc.nextLine();
 
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 /* CharAt(idx) : charAt 메서드는 매개변수로 char 타입으로 반환하고자 하는 문자열의 위치(index) */

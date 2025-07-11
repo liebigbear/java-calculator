@@ -2,28 +2,28 @@ package calculator.three;
 
 public enum OperatorType {
     ADD('+') {
-        public int operator(int a, int b) { return a + b; }
+        public double operator(double a, double b) { return a + b; }
     },
     MINUS('-') {
-        public int operator(int a, int b) { return a - b; }
+        public double operator(double a, double b) { return a - b; }
     },
     MULTIPLY('*') {
-        public int operator(int a, int b) { return a * b; }
+        public double operator(double a, double b) { return a * b; }
     },
     DIVIDE('/') {
-        public int operator(int a, int b) {
+        public double operator(double a, double b) {
             if (b == 0) throw new ArithmeticException("0으로 나눌 수 없습니다.");
             return a / b;
         }
     },
     MODULO('%') {
-        public int operator(int a, int b) { return a%b; }
+        public double operator(double a, double b) { return a%b; }
     };
 
     private final char operator;
     OperatorType(char operator) { this.operator = operator; }
     public char getOperator() { return operator; }
-    public abstract int operator(int a, int b);
+    public abstract double operator(double a, double b);
 
     public static OperatorType getOperatorType(char operator) {
         for (OperatorType type : OperatorType.values()) {
